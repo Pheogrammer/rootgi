@@ -1,73 +1,79 @@
-@extends('layouts.app')
+@extends('layouts.root')
 
+@section('title')
+    Login
+    @endSection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<section class="bg-light py-md-9 py-7 bg-holder" style="background-image: url({{asset('assets/images/bg/01.png')}});">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+    <!-- container start -->
+      <div class="container">
+
+        <!-- row start -->
+        <div class="row align-items-center pt-lg-9 pt-0 mt-lg-5 mt-0">
+            <div class="col-md-6 mb-4 mb-md-0">
+
+              <!-- intro caption start -->
+
+              <div class="container">
+                <div class="row justify-content-center no-gutters">
+                  <div class="col-lg-12 bg-dark px-2 px-md-8 py-md-9 py-5 d-flex z-index-9 mb-5 mb-lg-0">
+                    <div class="align-self-center w-100">
+                      <div class="mb-3 text-center">
+                        <h2 class="text-white">Login</h2>
+                      </div>
+                      <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="form-group">
+                          <input type="email"  name="email" class="form-control bg-transparent @error('email') is-invalid @enderror" id="email" placeholder="Enter Email" value="{{ old('email') }}" required autocomplete="email">
+                          @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" class="form-control bg-transparent @error('password') is-invalid @enderror" placeholder="Enter Password" required autocomplete="current-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror                          </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <hr>
+                      </form>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+                <div class="d-inline-block app-btn d-sm-flex mt-lg-4 mt-2">
+                  {{-- <a class="" href="#">
+                  <img class="img-fluid mr-2 mt-2" src="{{asset('assets/images/google-play-btn.png')}}" alt="">
+                  </a>
+                  <a class="" href="#">
+                  <img class="img-fluid mt-2" src="{{asset('assets/images/app-store-btn.png')}}" alt="">
+                  </a> --}}
+                </div>
+
+                <!-- intro caption startend -->
             </div>
+
+            <div class="col-lg-3 col-md-4 offset-md-2">
+                {{-- <a class="btn-icon rounded-circle bg-primary text-white btn-animation d-inline-block mb-2 popup-youtube" href="#"><i class="fas fa-play text-white"></i></a> --}}
+                <h5 class="mt-3">Combine your GIS capabilities with Data science, Machine Learning, Deep Learning and AI.</h5>
+                <a class="btn btn-link pl-0" href="#">Discover More <i class="fas fa-chevron-right pl-2"></i></a>
+            </div>
+
         </div>
-    </div>
-</div>
+      <!-- row end -->
+
+      </div>
+    <!-- container end -->
+
+  </section>
+<!--=================================
+forgot password strat -->
 @endsection

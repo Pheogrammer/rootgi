@@ -536,8 +536,7 @@ contact info start -->
               <!-- card start -->
                 <div class="icon-lg rounded-circle bg-primary text-white d-inline-block mb-md-2"><i class="fas fa-phone-alt"></i></div>
                 <h4 class="font-weight-normal mt-3">Contact Us</h4>
-                <p class="mb-0">+0987 456 321</p>
-                <p class="mb-0">+0789 456 321</p>
+                <p class="mb-0">+255 769 806 836</p>
               <!-- card end -->
 
             </div>
@@ -546,7 +545,9 @@ contact info start -->
               <!-- card start -->
                 <div class="icon-lg rounded-circle bg-primary text-white d-inline-block mb-md-2"><i class="far fa-envelope"></i></div>
                 <h4 class="font-weight-normal mt-3">Email </h4>
-                <p class="mb-0">softx@gmail.com</p>
+                <p class="mb-0">
+                    RootGIS2018@gmail.com
+                </p>
               <!-- card end -->
 
             </div>
@@ -555,7 +556,7 @@ contact info start -->
               <!-- card start -->
                 <div class="icon-lg rounded-circle bg-primary text-white d-inline-block mb-md-2"><i class="fas fa-location-arrow"></i></div>
                 <h4 class="font-weight-normal mt-3">Address </h4>
-                <p class="mb-0">7850 Green Drive Brookfield, WI 53045</p>
+                <p class="mb-0">Bagamoyo Road, Dar es salaam</p>
               <!-- card end -->
             </div>
 
