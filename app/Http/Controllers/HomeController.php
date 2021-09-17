@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\publication;
 use App\Models\contact;
 use App\Models\event;
+use Illuminate\Support\Facades\File;
 class HomeController extends Controller
 {
     /**
@@ -26,7 +27,9 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('home');
+        $publication = publication::orderBy('id','Desc')->first();
+        $event = event::orderBy('id','Desc')->first();
+        return view('home',['pub'=>$publication,'eve'=>$event]);
     }
 
     public function homepage()
@@ -42,15 +45,88 @@ class HomeController extends Controller
     public function savenewpost(Request $request)
     {
         $datas = new publication();
+
+        if($request['image']!='')
+        {
+            $path = public_path('posts/');
+
+            if(!File::isDirectory($path))
+            {
+              File::makeDirectory($path,$mode = 0777, true, true);
+            }
+
+            if($file = $request->file('image'))
+            {
+                $filename = $file->getClientOriginalName().'-'.time().'-'.auth()->user()->id.'.'.$file->getClientOriginalExtension();
+                $targetpath = $path;
+
+                if($file->move($targetpath, $filename))
+                {
+
+              $datas -> image = $filename;
+
+
+                }
+                else
+                {
+                  return redirect()->back()->withErrors(['message'=>'image1 slip Not uploaded, try again!']);
+
+                }
+              }else
+              {
+                return redirect()->back()->withErrors(['message'=>'image1 slip Not uploaded, try again!']);
+
+              }
+        }
+        if($request['image1']!='')
+        {
+            $path = public_path('posts/');
+
+            if(!File::isDirectory($path))
+            {
+              File::makeDirectory($path,$mode = 0777, true, true);
+            }
+
+            if($file = $request->file('image1'))
+            {
+                $filename2 = $file->getClientOriginalName().'-'.time().'-'.auth()->user()->id.'.'.$file->getClientOriginalExtension();
+                $targetpath = $path;
+
+                if($file->move($targetpath, $filename2))
+                {
+
+              $datas -> image2 = $filename2;
+
+
+                }
+                else
+                {
+                  return redirect()->back()->withErrors(['message'=>'image2 slip Not uploaded, try again!']);
+
+                }
+              }else
+              {
+                return redirect()->back()->withErrors(['message'=>'image2 slip Not uploaded, try again!']);
+
+              }
+        }
+
         $datas -> title = $request['title'];
         $datas -> content = $request['description'];
-        $datas -> image = $request['image'];
-        $datas -> image2 = $request['image2'];
-        $datas -> link = $request['link'];
-        $datas -> link2 = $request['link2'];
+
+        if($request['link']!='')
+        {
+            $datas -> link = $request['link'];
+
+        }
+        if($request['link']!='')
+        {
+            $datas -> link2 = $request['link2'];
+
+        }
         $datas -> created_by = auth()->user()->name;
         $datas -> save();
 
-        return redirect()->back()->with(['message' => 'Post Published Successfully!']);
+        return redirect()->route('home')->with(['message' => 'Post Published Successfully!']);
     }
 }

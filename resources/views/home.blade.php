@@ -14,7 +14,33 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Latest Publication</h5>
+
+                            <p class="card-text">
+                                <h6>{{$pub->title}}</h6>
+                                <p>
+                                    {{$pub->content}}
+                                </p>
+                                <small>{{$pub->created_at}}</small>, posted By {{$pub->created_by}}
+                            </p>
+                        </div>
+                    </div>
+<br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Latest Events </h5>
+
+                            <p class="card-text">
+                                <h6>{{$pub->title}}</h6>
+                                <p>
+                                    {{$pub->content}}
+                                </p>
+                                <small>{{$pub->created_at}}</small>, posted By {{$pub->created_by}}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

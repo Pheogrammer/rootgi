@@ -41,6 +41,9 @@
                     @else
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
+                            <a href="{{url('home')}}" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('newPub')}}" class="nav-link">Publications</a>
                         </li>
                         <li class="nav-item">
