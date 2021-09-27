@@ -52,12 +52,20 @@
             <div class="ml-auto">
               <ul class="nav justify-content-center">
               <!-- call number -->
+              @guest
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}"><i class="ti-lock fa-flip-horizontal mr-1"></i> Login <span class="pl-2">|</span> </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}"><i class="ti-user mr-1"></i> Sign Up</a>
               </li>
+              @else
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}"><i class="ti-user mr-1"></i> {{auth()->user()->name}}</a>
+              </li>
+
+              @endguest
             </ul>
             </div>
           </div>

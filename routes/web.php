@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('homepage',[App\Http\Controllers\HomeController::class, 'homepage'])->name('homepage');
+Route::get('homepage',[HomeController::class, 'homepage'])->name('homepage');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/newPub', [App\Http\Controllers\HomeController::class, 'newPub'])->name('newPub');
-Route::post('savenewpost',[App\Http\Controllers\HomeController::class, 'savenewpost'])->name('savenewpost');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/newPub', [HomeController::class, 'newPub'])->name('newPub');
+Route::post('savenewpost',[HomeController::class, 'savenewpost'])->name('savenewpost');
+
+Route::get('editPub/{id}',[HomeController::class,'editPub'])->name('editPub');
+//

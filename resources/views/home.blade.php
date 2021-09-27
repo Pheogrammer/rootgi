@@ -16,29 +16,22 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Latest Publication</h5>
+                          <div class="row ">
+                              <div class="col">
+                                <h5 class="card-title">Latest Publication</h5>
+                              </div>
+                              <div class="col">
+                                <a href="" class="btn btn-primary text-right">View All</a>
+                              </div>
+                          </div>
 
-                            <p class="card-text">
-                                <h6>{{$pub->title}}</h6>
+                                <h6 class='text-bold'>{{$pub->title}}</h6>
                                 <p>
+                                    <img src="{{asset('posts/'.$pub->image)}}" height="200" alt="image"> <br>
                                     {{$pub->content}}
                                 </p>
                                 <small>{{$pub->created_at}}</small>, posted By {{$pub->created_by}}
-                            </p>
-                        </div>
-                    </div>
-<br>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Latest Events </h5>
 
-                            <p class="card-text">
-                                <h6>{{$pub->title}}</h6>
-                                <p>
-                                    {{$pub->content}}
-                                </p>
-                                <small>{{$pub->created_at}}</small>, posted By {{$pub->created_by}}
-                            </p>
                         </div>
                     </div>
                 </div>

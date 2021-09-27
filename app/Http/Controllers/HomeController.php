@@ -129,4 +129,10 @@ class HomeController extends Controller
 
         return redirect()->route('home')->with(['message' => 'Post Published Successfully!']);
     }
+
+    public function editPub($id)
+    {
+        $data = publication::where('id',$id)->get();
+        return view('editPub',['pub'=>$data]);
+    }
 }
