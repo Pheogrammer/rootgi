@@ -21,13 +21,12 @@
         <div class="card-body">
           <h5 class="card-title">{{$pub->title}}</h5>
           <p class="card-text">{{$pub->content}}</p>
-          <a href="">Read More</a>
+          <a href="{{route('readpub',[$pub->id])}}">Read More</a>
           <p class="card-text"><small class="text-muted">{{$pub->created_at}}</small>, posted By {{$pub->created_by}}</small></p>
 
         </div>
       </div> <br>
 @endforeach
-      <a href="{{route('allposts')}}" class="btn btn-primary">View All</a>
                 </div>
             </div>
         </div>

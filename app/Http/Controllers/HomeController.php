@@ -27,10 +27,12 @@ class HomeController extends Controller
     public function index()
     {
 
-        $publication = publication::orderBy('id','Desc')->first();
+        $publication = publication::orderBy('id','Desc')->orderBy('id','desc')->limit(3)->get();
         $event = event::orderBy('id','Desc')->first();
         return view('home',['pub'=>$publication,'eve'=>$event]);
     }
+
+
 
     public function homepage()
     {
@@ -134,5 +136,17 @@ class HomeController extends Controller
     {
         $data = publication::where('id',$id)->get();
         return view('editPub',['pub'=>$data]);
+    }
+
+    public function readpub($id)
+    {
+        $data = publication::where('id',$id)->first();
+        return view('readpub',['pub'=>$data]);
+    }
+
+    public function allposts()
+    {
+        $publication = publication::orderBy('id','Desc')->orderBy('id','desc')->get();
+        return view('allposts',['pub'=>$publication]);
     }
 }

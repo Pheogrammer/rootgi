@@ -29,5 +29,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/newPub', [HomeController::class, 'newPub'])->name('newPub');
 Route::post('savenewpost',[HomeController::class, 'savenewpost'])->name('savenewpost');
 
-Route::get('editPub/{id}',[HomeController::class,'editPub'])->name('editPub');
+Route::get('allposts', [HomeController::class, 'allposts'])->name('allposts');
+Route::get('readpub/{id}',[HomeController::class,'readpub'])->name('readpub');
 //

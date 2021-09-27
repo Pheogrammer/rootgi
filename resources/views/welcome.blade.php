@@ -6,6 +6,10 @@
     @endSection
 
 @section('content')
+@php
+    use App\Models\publication;
+    $dataf = publication::orderby('id','desc')->limit(3)->get();
+@endphp
 <!--=================================
 intro start-->
 <section class="bg-light py-md-9 py-7 bg-holder" style="background-image: url({{asset('assets/images/bg/01.png')}});">
@@ -114,7 +118,7 @@ about us strat -->
                       </span>
 
                       <!-- text-->
-                     Education
+                     Health
                     </li>
                     <!-- item end-->
 
@@ -237,7 +241,7 @@ feature start -->
 
              <!-- heading start -->
               <div class="mb-md-6 mb-5">
-                <h1 class="font-weight-normal mb-2 text-left">Projects.</h1>
+                <h1 class="font-weight-normal mb-2 text-left">Publications.</h1>
                 <p class="mb-0">At <b>RootGIS</b> </p>
               </div>
               <!-- heading end -->
@@ -248,25 +252,23 @@ feature start -->
 
 
         <!-- row start -->
+        @foreach($dataf as $pub)
         <div class="row">
 
           <div class="col-md-4">
-            <div class="p-lg-5 p-3 text-center h-100" style="background: url({{asset('assets/images/gistraining.jpg')}}); background-size: cover; ">
+            <div class="p-lg-5 p-3 text-center h-100" style="background: url({{asset('posts/'.$pub->image)}}); background-size: cover; ">
 
 
-               <small class="d-block mt-2 mb-2 text-light bg-dark">Please note that stripe change will apply at checkout</small>
             </div>
 
           </div>
 
           <div class="col-md-8 mt-5 mt-md-0">
 
-            <h1>ARDHI UNIVERSITY – GIS CLUB</h1>
+            <h1 style="text-transform:uppercase;">{{$pub->title}}</h1>
               <div class="bg-light p-4 p-md-6 px-lg-9 text-center h-100">
                 <div class="mb-md-6 mb-5">
-                  <p class="text-left">To set off the first activities for the club, a training event was organized. The training was held on Saturday, 23rd January 2021 at Ardhi University.
-                    It was organized by ARU GIS Club in partnership with two startup companies (Deocode Geoconsult and RootGIS) and Crowd2Map; an organization advocating the end of Female Genital Mutilation (FGM) in rural Tanzania.
-                    Prior to the event, an online registration form was prepared and shared to capture those interested to attend the training and the ‘user needs’ for planning other events in the future...
+                  <p class="text-left">{{$pub->content}}
                     <br>
               </div>
               <br> <button class="btn btn-primary">Read more</button> </p>
@@ -277,6 +279,7 @@ feature start -->
 
 
         </div>
+        @endforeach
 
 {{-- questions and blog posts --}}
        <div class="col-12 text-center">
