@@ -1,7 +1,7 @@
 @extends('layouts.root')
 
 @section('title')
-    Login
+    Contact
     @endSection
 @section('content')
 <section class="bg-light py-md-9 py-7 bg-holder" style="background-image: url({{asset('assets/images/bg/01.png')}});">
