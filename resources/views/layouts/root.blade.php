@@ -39,10 +39,10 @@
             <ul class="nav justify-content-center">
               <!-- call number -->
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-phone fa-flip-horizontal mr-1"></i> +255  769 806 836 <span class="pl-2">|</span> </a>
+                <a class="nav-link" href="tel:+255769806836"><i class="fas fa-phone fa-flip-horizontal mr-1"></i> +255  769 806 836 <span class="pl-2">|</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="far fa-envelope mr-1"></i> info@rootgis.org <span class="pl-2">|</span> </a>
+                <a class="nav-link" href="mail:info@rootgis.org"><i class="far fa-envelope mr-1"></i> info@rootgis.org <span class="pl-2">|</span> </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Bagamoyo Road, Dar es salaam</a>
@@ -141,7 +141,6 @@ footer-->
           <ul class="list-unstyled mb-0">
             <li><a class="text-white" href="/">Home</a></li>
             <li><a class="text-white" href="#">Publications</a></li>
-            <li><a class="text-white" href="#">Events</a></li>
             <li><a class="text-white" href="/contact">Contact Us</a></li>
           </ul>
         </div>

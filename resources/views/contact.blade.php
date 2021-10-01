@@ -17,7 +17,7 @@
             <!-- heading -->
               <div class="mb-md-6 mb-5">
                 <h2 class="font-weight-normal mb-2">Let’s Get In Touch!</h2>
-                <p>It would be great to hear from you! If you got any questions, please do not hesitate to send us a message. We are looking forward to hearing from you! We reply within 24 hours!</p>
+                <p>It would be great to hear from you! <br> If you got any questions, please do not hesitate to send us a message. <br> We are looking forward to hearing from you! We reply within 24 hours!</p>
               </div>
             <!-- heading end-->
 
@@ -55,21 +55,23 @@
               <i class="ti-map-alt fa-3x"></i>
               <div class="media-body pl-4">
                 <h4 class="mt-0 mb-1 text-white">Address</h4>
-                <p>214 West Arnold St. New York, NY 10002</p>
+                <p>Bagamoyo Road, Dar es salaam</p>
               </div>
             </div>
             <div class="media mb-4">
               <i class="ti-email fa-3x"></i>
               <div class="media-body pl-4">
                 <h4 class="mt-0 mb-1 text-white">Email</h4>
-                <p>soft-x@gmail.com</p>
+                <p> <a href="mail:info@rootgis.org">  info@rootgis.org</a>
+
+                </p>
               </div>
             </div>
             <div class="media">
               <i class="ti-mobile fa-3x"></i>
               <div class="media-body pl-4">
                 <h4 class="mt-0 mb-1 text-white">Mobile Number</h4>
-                <p>+1 628 123 4000</p>
+                <p> <a href="tel:+255769806836"> </a></p>
               </div>
             </div>
           </div>

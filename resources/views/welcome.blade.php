@@ -549,8 +549,7 @@ contact info start -->
                 <div class="icon-lg rounded-circle bg-primary text-white d-inline-block mb-md-2"><i class="far fa-envelope"></i></div>
                 <h4 class="font-weight-normal mt-3">Email </h4>
                 <p class="mb-0">
-                    RootGIS2018@gmail.com
-                </p>
+                    info@rootgis.org                </p>
               <!-- card end -->
 
             </div>
