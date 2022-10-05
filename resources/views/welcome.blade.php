@@ -12,7 +12,7 @@
             ->get();
     @endphp
     <!--=================================
-        intro start-->
+                                                            intro start-->
     <section class="bg-light py-md-9 py-7 bg-holder" style="background-image: url({{ asset('assets/images/bg/01.png') }});">
 
         <!-- container start -->
@@ -127,9 +127,9 @@
 
     </section>
     <!--=================================
-        intro end -->
+                                                            intro end -->
     <!--=================================
-        about us strat -->
+                                                            about us strat -->
     <section class="pb-lg-9  pb-7">
 
         <!-- container start -->
@@ -284,17 +284,77 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col mb-5">
+
+                    <!-- card -->
+                    <div class="card bg-primary border-0">
+                        <div class="card-body">
+                            <h2 class="text-white font-weight-normal">Mission </h2>
+                            <p class="card-subtitle mb-2 text-white">To coordinate, educate, guide and assist the
+                                implementation, maintenance and development of GIS (Geographic
+                                Information Systems) technology</p>
+                        </div>
+                    </div>
+                    <!-- card end-->
+
+                </div>
+                <div class="col mb-5">
+
+                    <!-- card -->
+                    <div class="card bg-primary border-0">
+                        <div class="card-body">
+                            <h2 class="text-white font-weight-normal">Vision</h2>
+                            <p class="card-subtitle mb-2 text-white">To provide GIS (Geographical Information System)
+                                services and spatial information in the country to inform policy and
+                                enhace data based decision making</p>
+                        </div>
+                    </div>
+                    <!-- card end-->
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mb-5">
+
+                    <!-- card -->
+                    <div class="card bg-light border-0">
+                        <div class="card-body">
+                            <h2 class="text-primary font-weight-normal">Objectives</h2>
+                            <p class="card-subtitle mb-2 text-primary">
+                            <ul style="list-style: none;">
+                                <li> <span class="badge badge-rounded-circle badge-primary-soft mr-2">
+                                        <i class="fa fa-check"></i>
+                                    </span> Promote skills and capacity development in GIS at all levels</li>
+                                <li> <span class="badge badge-rounded-circle badge-primary-soft mr-2">
+                                        <i class="fa fa-check"></i>
+                                    </span> Promote Community mapping and Humanitarian entity in solving community-based
+                                    problems using citizen’s generated data</li>
+                                <li> <span class="badge badge-rounded-circle badge-primary-soft mr-2">
+                                        <i class="fa fa-check"></i>
+                                    </span> Champion Spatial Data advocacy in the country by addressing issues of spatial
+                                    data collection, quality, use and sharing among
+                                    stakeholders</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- card end-->
+
+                </div>
+                <div class="col  mb-5">
+                    <br> <br> <br>
+                    <a class="card card-body bg-primary text-light border-0" href="">Read more<i
+                            class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                </div>
+            </div>
             <!-- row end -->
 
         </div>
         <!-- container end -->
 
     </section>
-    <!--=================================
-          about us end-->
 
-    <!--=================================
-        feature start -->
     <section class="pb-lg-9 pb-7 overflow-hidden">
 
         <!-- container start -->
@@ -310,340 +370,86 @@
 
                 </div>
 
-                <!-- row start -->
-                <div class="row">
-                    <div class="col-12 text-center mb-lg-6 mb-0 mb-lg-4">
 
-                        <!-- heading start -->
-                        <div class="mb-md-6 mb-5">
-                            <h1 class="font-weight-normal mb-2 text-left">Publications.</h1>
-                            <p class="mb-0">At <b>RootGIS</b> </p>
-                        </div>
-                        <!-- heading end -->
-
-                    </div>
-                </div>
-                <!-- row end -->
-
-
-                <!-- row start -->
-                @foreach ($dataf as $pub)
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="p-lg-5 p-3 text-center h-100"
-                                style="background: url({{ asset('posts/' . $pub->image) }}); background-size: cover; ">
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-8 mt-5 mt-md-0">
-
-                            <h1 style="text-transform:uppercase;">{{ $pub->title }}</h1>
-                            <div class="bg-light p-4 p-md-6 px-lg-9 text-center h-100">
-                                <div class="mb-md-6 mb-5">
-                                    <p class="text-left">{{ $pub->content }}
-                                        <br>
-                                </div>
-                                <br> <button class="btn btn-primary">Read more</button> </p>
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-                @endforeach
 
                 {{-- questions and blog posts --}}
-                <div class="col-12 text-center">
-                    <div class="mt-4 d-inline-block">Want to see more? <a href="#"> Click here <i
-                                class="fas fa-arrow-right pl-1"></i></a></div>
+                <div class="mb-md-6 mb-5 text-center">
+                    <h2 class="font-weight-normal mb-2">Recent publications.</h2>
+                    {{-- <p class="mb-0">W</p> --}}
                 </div>
+                <br>
                 <!-- row end -->
+                <div class="row">
+                    <div class="col">
+                        <div id="myCarousel3" class="carousel slide" data-bs-ride="carousel">
+                            @php
+                                $vb = 0;
+                                $vn = 0;
+                            @endphp
+                            <div class="carousel-indicators">
+                                @foreach ($dataf as $pub)
+                                    <button type="button" data-bs-target="#myCarousel3"
+                                        data-bs-slide-to="{{ $vn }}"
+                                        @php if($vn ==0 ) {echo 'class="active"';} @endphp aria-current="true"
+                                        aria-label="Slide {{ $vn }}"></button>
+                                    @php
+                                        $vn++;
+                                    @endphp
+                                @endforeach
 
-                <div class="position-absolute bottom right mr-n8 mb-n8 z-index-n1 d-none d-xl-block">
+                            </div>
+                            <div class="carousel-inner">
 
-                    <!-- svg start -->
-                    <img class="svg-injector mt-9 mr-xl-n9" src="{{ asset('assets/images/svg/shape.svg') }}"
-                        alt="svg">
-                    <img class="svg-injector ml-n8" src="{{ asset('assets/images/svg/shape-02.svg') }}" alt="svg">
-                    <!-- svg end -->
+                                @foreach ($dataf as $pub)
+                                    <div class="carousel-item @php if($vb == 0){echo 'active';} @endphp card">
 
+                                        <img class="card-img-top" style="max-width: 100%;"
+                                            src="{{ asset('posts/' . $pub->image) }}" alt="">
+                                        <div class="card-body">
+                                            <h2 class="card-title">{{ $pub->title }}</h2>
+                                            <p class="card-text">{!! nl2br($pub->content) !!}</p>
+                                        </div>
+                                    </div>
+                            @endforeach
+                        </div>
+
+
+                        </div>
+                        <button class="carousel-control-prev text-primary" type="button" data-bs-target="#myCarousel3"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next text-primary" type="button" data-bs-target="#myCarousel3"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
+            </div>
+
+            <div class="col-12 text-center">
+                <div class="mt-4 d-inline-block">Want to see more publications? <a href="#"> Click here <i
+                            class="fas fa-arrow-right pl-1"></i></a></div>
+            </div>
+
+            <div class="position-absolute bottom right mr-n8 mb-n8 z-index-n1 d-none d-xl-block">
+
+                <!-- svg start -->
+                <img class="svg-injector mt-9 mr-xl-n9" src="{{ asset('assets/images/svg/shape.svg') }}" alt="svg">
+                <img class="svg-injector ml-n8" src="{{ asset('assets/images/svg/shape-02.svg') }}" alt="svg">
+                <!-- svg end -->
 
             </div>
+
+        </div>
         </div>
         <!-- container end -->
 
     </section>
-    <!--=================================
-        feature end -->
 
 
-    <!--=================================
-        about start -->
-    <section class="pb-lg-9 pb-7">
-
-        <!-- container start -->
-        <div class="container">
-
-            <!-- row start -->
-
-            <!-- row start -->
-
-        </div>
-        <!-- container end -->
-
-    </section>
-    <!--=================================
-        about end -->
-
-    <!--=================================
-        accordion start -->
-    <section class="pb-lg-9  pb-7">
-
-        <!-- container start -->
-        <div class="container">
-
-            <!-- row start -->
-            <div class="row align-items-center justify-content-center">
-
-                <div class="col-lg-8 text-center">
-
-                    <!-- heading start -->
-                    <div class="mb-md-6 mb-5">
-                        <h2 class="font-weight-normal text-left mb-2">Recent publications.</h2>
-                        <p class="mb-0">Without clarity, you send a very garbled message out to the Universe. We know
-                            that the law of attraction says that we will attract what we focus on, so if we don’t have
-                            clarity.</p>
-                    </div>
-                    <!-- heading end -->
-
-                </div>
-
-            </div>
-            <!-- row start -->
-
-            <!-- row start -->
-            <div class="row">
-
-                <div class="col-lg-6">
-
-                    <div class="accordion" id="accordionExample">
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingOne">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapseOne"
-                                        aria-expanded="false" aria-controls="collapseOne">
-                                        Does it need to be done at all?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                                data-parent="#accordionExample">
-                                <div class="card-body pt-0 pb-1">
-                                    Having clarity of purpose and a clear picture of what you desire, is probably the single
-                                    most important factor in achievement. Why is Clarity so important.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapseTwo"
-                                        aria-expanded="false" aria-controls="collapseTwo">
-                                        Free, with benefits?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordionExample">
-                                <div class="card-body pt-0 pb-1">
-                                    Making a decision to do something – this is the first step. We all know that nothing
-                                    moves until someone makes a decision.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapseThree"
-                                        aria-expanded="false" aria-controls="collapseThree">
-                                        Why is clarity so important?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordionExample">
-                                <div class="card-body pt-0 pb-1">
-                                    If success is a process with a number of defined steps, then it is just like any other
-                                    process. So, what is the first step in any process.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingfour">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapsefour"
-                                        aria-expanded="false" aria-controls="collapsefour">
-                                        What is the first step in any process?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapsefour" class="collapse" aria-labelledby="headingfour"
-                                data-parent="#accordionExample">
-                                <div class="card-body pt-0 pb-1">
-                                    There are basically six key areas to higher achievement. Some people will tell you there
-                                    are four while others may tell you there are eight. One thing for certain though, is
-                                    that irrespective of the number of steps the experts talk about, they all originate from
-                                    the same roots.
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2 ">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingfive">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapsefive"
-                                        aria-expanded="false" aria-controls="collapsefive">
-                                        Then it is just like any other process.?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapsefive" class="collapse" aria-labelledby="headingfive"
-                                data-parent="#accordionExample">
-                                <div class="card-body pt-0 pb-1">
-                                    Commitment – understanding the price and having the willingness to pay that price
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-6">
-
-                    <div class="accordion" id="accordionExample-02">
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingOne-02">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapseOne-02"
-                                        aria-expanded="false" aria-controls="collapseOne-02">
-                                        Works on any device?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseOne-02" class="collapse" aria-labelledby="headingOne-02"
-                                data-parent="#accordionExample-02">
-                                <div class="card-body pt-0 pb-1">
-                                    Having clarity of purpose and a clear picture of what you desire, is probably the single
-                                    most important factor in achievement. Why is Clarity so important.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingTwo-02">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapseTwo-02"
-                                        aria-expanded="false" aria-controls="collapseTwo-02">
-                                        So how do we get clarity?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseTwo-02" class="collapse" aria-labelledby="headingTwo-02"
-                                data-parent="#accordionExample-02">
-                                <div class="card-body pt-0 pb-1">
-                                    Making a decision to do something – this is the first step. We all know that nothing
-                                    moves until someone makes a decision.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingThree-03">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapseThree-03"
-                                        aria-expanded="false" aria-controls="collapseThree-03">
-                                        For those of you who are serious about having more?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseThree-03" class="collapse" aria-labelledby="headingThree-03"
-                                data-parent="#accordionExample-02">
-                                <div class="card-body pt-0 pb-1">
-                                    If success is a process with a number of defined steps, then it is just like any other
-                                    process. So, what is the first step in any process.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card bg-transparent border mb-2">
-                            <div class="card-header bg-transparent border-0 p-0" id="headingfour-02">
-                                <h5 class="mb-0">
-                                    <button
-                                        class="bg-transparent border-0 p-3 pr-6 font-weight-normal right btn-block text-left"
-                                        type="button" data-toggle="collapse" data-target="#collapsefour-02"
-                                        aria-expanded="false" aria-controls="collapsefour-02">
-                                        So how do we get clarity?
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapsefour-02" class="collapse" aria-labelledby="headingfour-02"
-                                data-parent="#accordionExample-02">
-                                <div class="card-body pt-0 pb-1">
-                                    There are basically six key areas to higher achievement. Some people will tell you there
-                                    are four while others may tell you there are eight. One thing for certain though, is
-                                    that irrespective of the number of steps the experts talk about, they all originate from
-                                    the same roots.
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 text-center">
-                    <div class="mt-4 d-inline-block">Still have a question? <a href="faq.html"> Ask your question here <i
-                                class="fas fa-arrow-right pl-1"></i></a></div>
-                </div>
-
-            </div>
-            <!-- row start -->
-
-        </div>
-        <!-- container end -->
-
-    </section>
-    <!--=================================
-        accordion end -->
-
-    <!--=================================
-        contact info start -->
     <section class="pb-lg-9 pb-7">
 
         <!-- container start -->
@@ -708,5 +514,5 @@
 
     </section>
     <!--=================================
-        contact info end -->
+                                                            contact info end -->
 @endsection

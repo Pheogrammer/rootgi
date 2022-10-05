@@ -20,7 +20,7 @@
 
         <div class="card-body">
           <h5 class="card-title">{{$pub->title}}</h5>
-          <p class="card-text">{{$pub->content}}</p>
+          <p class="card-text">{!! nl2br($pub->content)!!}</p>
           <a href="">Read More</a>
           <p class="card-text"><small class="text-muted">{{$pub->created_at}}</small>, posted By {{$pub->created_by}}</small></p>
 
