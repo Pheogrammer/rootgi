@@ -11,9 +11,9 @@
             ->limit(3)
             ->get();
     @endphp
-    <!--=================================
-                                                            intro start-->
-    <section class="bg-light py-md-9 py-7 bg-holder" style="background-image: url({{ asset('assets/images/bg/01.png') }});">
+
+    <section class="bg-light py-md-9 py-7 bg-holder" style="background-image: url({{ asset('assets/images/bg/01.png') }});"
+        id="home">
 
         <!-- container start -->
         <div class="container">
@@ -32,33 +32,31 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <svg class="bd-placeholder-img" width="100%" height="100%"
-                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                                    <rect width="100%" height="100%" fill="#777" />
-                                </svg>
+                                <img class="bd-placeholder-img" height="100%"
+                                    src="https://www.admitnetwork.org/wp-content/uploads/2015/09/Capture9.png"
+                                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
 
                                 <div class="container">
-                                    <div class="carousel-caption text-start">
+                                    {{-- <div class="carousel-caption text-start">
                                         <h1>Example headline.</h1>
                                         <p>Some representative placeholder content for the first slide of the carousel.</p>
                                         <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <svg class="bd-placeholder-img" width="100%" height="100%"
-                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                                    <rect width="100%" height="100%" fill="#777" />
-                                </svg>
+                                <img class="bd-placeholder-img" height="100%"
+                                src="https://cdn.educba.com/academy/wp-content/uploads/2020/03/Applications-of-GIS.jpg"
+                                aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
+
+
 
                                 <div class="container">
-                                    <div class="carousel-caption">
+                                    {{-- <div class="carousel-caption">
                                         <h1>Another example headline.</h1>
                                         <p>Some representative placeholder content for the second slide of the carousel.</p>
                                         <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -101,19 +99,13 @@
                     <p class="mb-0"></p>
 
                     <div class="d-inline-block app-btn d-sm-flex mt-lg-4 mt-2">
-                        {{-- <a class="" href="#">
-                <img class="img-fluid mr-2 mt-2" src="{{asset('assets/images/google-play-btn.png')}}" alt="">
-                </a>
-                <a class="" href="#">
-                <img class="img-fluid mt-2" src="{{asset('assets/images/app-store-btn.png')}}" alt="">
-                </a> --}}
+
                     </div>
 
                     <!-- intro caption startend -->
                 </div>
 
                 <div class="col-lg-3 col-md-4 offset-md-2">
-                    {{-- <a class="btn-icon rounded-circle bg-primary text-white btn-animation d-inline-block mb-2 popup-youtube" href="#"><i class="fas fa-play text-white"></i></a> --}}
                     <h5 class="mt-3">Combine your GIS capabilities with Data science, Machine Learning, Deep Learning and
                         AI.</h5>
                     <a class="btn btn-link pl-0" href="#">Discover More <i class="fas fa-chevron-right pl-2"></i></a>
@@ -126,11 +118,8 @@
         <!-- container end -->
 
     </section>
-    <!--=================================
-                                                            intro end -->
-    <!--=================================
-                                                            about us strat -->
-    <section class="pb-lg-9  pb-7">
+
+    <section class="pb-lg-9  pb-7" id="about">
 
         <!-- container start -->
         <div class="container">
@@ -355,7 +344,7 @@
 
     </section>
 
-    <section class="pb-lg-9 pb-7 overflow-hidden">
+    <section class="pb-lg-9 pb-7 overflow-hidden" id="Pub">
 
         <!-- container start -->
         <div class="container">
@@ -410,8 +399,8 @@
                                             <p class="card-text">{!! nl2br($pub->content) !!}</p>
                                         </div>
                                     </div>
-                            @endforeach
-                        </div>
+                                @endforeach
+                            </div>
 
 
                         </div>
@@ -450,7 +439,7 @@
     </section>
 
 
-    <section class="pb-lg-9 pb-7">
+    <section class="pb-lg-9 pb-7" id="contact">
 
         <!-- container start -->
         <div class="container">
@@ -514,5 +503,5 @@
 
     </section>
     <!--=================================
-                                                            contact info end -->
+                                                                    contact info end -->
 @endsection

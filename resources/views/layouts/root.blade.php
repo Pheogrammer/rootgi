@@ -58,21 +58,21 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item active dropdown dropdown-animate" data-toggle="hover">
-                                    <a class="nav-link" href="/">
+                                    <a class="nav-link" href="#home">
                                         Home
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                    <a class="nav-link" href="#">
-                                        Publications
+                                    <a class="nav-link" href="#about">
+                                        About
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                    <a class="nav-link" href="#">
-                                        Events
+                                    <a class="nav-link" href="#Pub">
+                                        Publications
                                     </a>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/contact">Contact</a>
+                                    <a class="nav-link" href="#contact">Contact</a>
                                 </li>
                             </ul>
                     </nav>
@@ -127,9 +127,11 @@ footer-->
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <ul class="list-unstyled mb-0">
-                        <li><a class="text-white" href="/">Home</a></li>
-                        <li><a class="text-white" href="#">Publications</a></li>
-                        <li><a class="text-white" href="/contact">Contact Us</a></li>
+                        <li><a class="text-white" href="#home">Home</a></li>
+                        <li><a class="text-white" href="#about">About</a></li>
+
+                        <li><a class="text-white" href="#Pub">Publications</a></li>
+                        <li><a class="text-white" href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
